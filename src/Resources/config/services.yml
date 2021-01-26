@@ -1,0 +1,15 @@
+services:
+    _defaults:
+        public: false
+        autowire: true
+        autoconfigure: true
+
+    Pimcore\Bundle\EcommerceFrameworkBundle\PaymentManager\Payment\Datatrans:
+        arguments:
+            $options: [ ]
+            $formFactory: '@form.factory'
+        tags:
+            -  { name: pimcore_ecommerce.payment.provider, key: 'datatrans' }
+
+    Pimcore\Bundle\EcommerceFrameworkBundle\Datatrans\Installer:
+        public: true
