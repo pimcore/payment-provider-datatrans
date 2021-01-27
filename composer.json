@@ -2,6 +2,7 @@
   "name": "pimcore/payment-provider-datatrans",
   "license": "GPL-3.0+",
   "type": "pimcore-bundle",
+  "description": "Pimcore Payment Provider - Datatrans",
   "config": {
     "sort-packages": true
   },
