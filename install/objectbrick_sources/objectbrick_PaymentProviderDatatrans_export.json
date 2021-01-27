@@ -5,14 +5,16 @@
             "fieldname": "paymentProvider"
         }
     ],
-    "title": "",
-    "group": "PaymentProvider",
     "key": null,
     "parentClass": "",
+    "implementsInterfaces": null,
+    "title": "",
+    "group": "PaymentProvider",
     "layoutDefinitions": {
         "fieldtype": "panel",
         "labelWidth": 100,
         "layout": null,
+        "border": false,
         "name": null,
         "type": null,
         "region": null,
@@ -20,7 +22,7 @@
         "width": null,
         "height": null,
         "collapsible": false,
-        "collapsed": null,
+        "collapsed": false,
         "bodyStyle": null,
         "datatype": "layout",
         "permissions": null,
@@ -29,6 +31,7 @@
                 "fieldtype": "panel",
                 "labelWidth": 150,
                 "layout": null,
+                "border": false,
                 "name": "Layout",
                 "type": null,
                 "region": null,
@@ -44,12 +47,14 @@
                     {
                         "fieldtype": "input",
                         "width": null,
+                        "defaultValue": null,
                         "queryColumnType": "varchar",
                         "columnType": "varchar",
                         "columnLength": 190,
                         "phpdocType": "string",
                         "regex": "",
                         "unique": false,
+                        "showCharCount": null,
                         "name": "configurationKey",
                         "title": "Configuration Key",
                         "tooltip": "",
@@ -63,17 +68,20 @@
                         "relationType": false,
                         "invisible": false,
                         "visibleGridView": false,
-                        "visibleSearch": false
+                        "visibleSearch": false,
+                        "defaultValueGenerator": ""
                     },
                     {
                         "fieldtype": "input",
                         "width": 400,
+                        "defaultValue": null,
                         "queryColumnType": "varchar",
                         "columnType": "varchar",
                         "columnLength": 255,
                         "phpdocType": "string",
                         "regex": "",
                         "unique": null,
+                        "showCharCount": null,
                         "name": "auth_aliasCC",
                         "title": "aliasCC",
                         "tooltip": "",
@@ -87,17 +95,20 @@
                         "relationType": false,
                         "invisible": false,
                         "visibleGridView": false,
-                        "visibleSearch": false
+                        "visibleSearch": false,
+                        "defaultValueGenerator": ""
                     },
                     {
                         "fieldtype": "input",
                         "width": 400,
+                        "defaultValue": null,
                         "queryColumnType": "varchar",
                         "columnType": "varchar",
                         "columnLength": 255,
                         "phpdocType": "string",
                         "regex": "",
                         "unique": false,
+                        "showCharCount": null,
                         "name": "auth_maskedCC",
                         "title": "maskedCC",
                         "tooltip": "auth_maskedCC",
@@ -111,17 +122,20 @@
                         "relationType": false,
                         "invisible": false,
                         "visibleGridView": false,
-                        "visibleSearch": false
+                        "visibleSearch": false,
+                        "defaultValueGenerator": ""
                     },
                     {
                         "fieldtype": "input",
                         "width": 400,
+                        "defaultValue": null,
                         "queryColumnType": "varchar",
                         "columnType": "varchar",
                         "columnLength": 255,
                         "phpdocType": "string",
                         "regex": "",
                         "unique": false,
+                        "showCharCount": null,
                         "name": "auth_pmethod",
                         "title": "pmethod",
                         "tooltip": "auth_pmethod",
@@ -135,17 +149,20 @@
                         "relationType": false,
                         "invisible": false,
                         "visibleGridView": false,
-                        "visibleSearch": false
+                        "visibleSearch": false,
+                        "defaultValueGenerator": ""
                     },
                     {
                         "fieldtype": "input",
                         "width": 400,
+                        "defaultValue": null,
                         "queryColumnType": "varchar",
                         "columnType": "varchar",
                         "columnLength": 255,
                         "phpdocType": "string",
                         "regex": "",
                         "unique": null,
+                        "showCharCount": null,
                         "name": "auth_expm",
                         "title": "expm",
                         "tooltip": "",
@@ -159,17 +176,20 @@
                         "relationType": false,
                         "invisible": false,
                         "visibleGridView": false,
-                        "visibleSearch": false
+                        "visibleSearch": false,
+                        "defaultValueGenerator": ""
                     },
                     {
                         "fieldtype": "input",
                         "width": 400,
+                        "defaultValue": null,
                         "queryColumnType": "varchar",
                         "columnType": "varchar",
                         "columnLength": 255,
                         "phpdocType": "string",
                         "regex": "",
                         "unique": null,
+                        "showCharCount": null,
                         "name": "auth_expy",
                         "title": "expy",
                         "tooltip": "",
@@ -183,17 +203,20 @@
                         "relationType": false,
                         "invisible": false,
                         "visibleGridView": false,
-                        "visibleSearch": false
+                        "visibleSearch": false,
+                        "defaultValueGenerator": ""
                     },
                     {
                         "fieldtype": "input",
                         "width": 400,
+                        "defaultValue": null,
                         "queryColumnType": "varchar",
                         "columnType": "varchar",
                         "columnLength": 255,
                         "phpdocType": "string",
                         "regex": "",
                         "unique": null,
+                        "showCharCount": null,
                         "name": "auth_reqtype",
                         "title": "reqtype",
                         "tooltip": "",
@@ -207,17 +230,20 @@
                         "relationType": false,
                         "invisible": false,
                         "visibleGridView": false,
-                        "visibleSearch": false
+                        "visibleSearch": false,
+                        "defaultValueGenerator": ""
                     },
                     {
                         "fieldtype": "input",
                         "width": 400,
+                        "defaultValue": null,
                         "queryColumnType": "varchar",
                         "columnType": "varchar",
                         "columnLength": 255,
                         "phpdocType": "string",
                         "regex": "",
                         "unique": null,
+                        "showCharCount": null,
                         "name": "auth_uppTransactionId",
                         "title": "uppTransactionId",
                         "tooltip": "",
@@ -231,17 +257,20 @@
                         "relationType": false,
                         "invisible": false,
                         "visibleGridView": false,
-                        "visibleSearch": false
+                        "visibleSearch": false,
+                        "defaultValueGenerator": ""
                     },
                     {
                         "fieldtype": "input",
                         "width": 400,
+                        "defaultValue": null,
                         "queryColumnType": "varchar",
                         "columnType": "varchar",
                         "columnLength": 255,
                         "phpdocType": "string",
                         "regex": "",
                         "unique": null,
+                        "showCharCount": null,
                         "name": "auth_amount",
                         "title": "amount",
                         "tooltip": "",
@@ -255,17 +284,20 @@
                         "relationType": false,
                         "invisible": false,
                         "visibleGridView": false,
-                        "visibleSearch": false
+                        "visibleSearch": false,
+                        "defaultValueGenerator": ""
                     },
                     {
                         "fieldtype": "input",
                         "width": 400,
+                        "defaultValue": null,
                         "queryColumnType": "varchar",
                         "columnType": "varchar",
                         "columnLength": 255,
                         "phpdocType": "string",
                         "regex": "",
                         "unique": null,
+                        "showCharCount": null,
                         "name": "auth_currency",
                         "title": "currency",
                         "tooltip": "",
@@ -279,17 +311,20 @@
                         "relationType": false,
                         "invisible": false,
                         "visibleGridView": false,
-                        "visibleSearch": false
+                        "visibleSearch": false,
+                        "defaultValueGenerator": ""
                     },
                     {
                         "fieldtype": "input",
                         "width": 400,
+                        "defaultValue": null,
                         "queryColumnType": "varchar",
                         "columnType": "varchar",
                         "columnLength": 255,
                         "phpdocType": "string",
                         "regex": "",
                         "unique": null,
+                        "showCharCount": null,
                         "name": "auth_refno",
                         "title": "refno",
                         "tooltip": "",
@@ -303,7 +338,8 @@
                         "relationType": false,
                         "invisible": false,
                         "visibleGridView": false,
-                        "visibleSearch": false
+                        "visibleSearch": false,
+                        "defaultValueGenerator": ""
                     },
                     {
                         "fieldtype": "datetime",
@@ -325,10 +361,11 @@
                         "relationType": false,
                         "invisible": false,
                         "visibleGridView": false,
-                        "visibleSearch": false
+                        "visibleSearch": false,
+                        "defaultValueGenerator": ""
                     },
                     {
-                        "fieldtype": "href",
+                        "fieldtype": "manyToOneRelation",
                         "width": "",
                         "assetUploadPath": "",
                         "relationType": true,
@@ -342,7 +379,6 @@
                         "assetTypes": [],
                         "documentsAllowed": false,
                         "documentTypes": [],
-                        "lazyLoading": true,
                         "classes": [
                             {
                                 "classes": "OnlineShopOrder"
@@ -364,9 +400,12 @@
                         "visibleSearch": false
                     }
                 ],
-                "locked": false
+                "locked": false,
+                "icon": null
             }
         ],
-        "locked": false
-    }
+        "locked": false,
+        "icon": null
+    },
+    "generateTypeDeclarations": false
 }
