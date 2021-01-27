@@ -18,6 +18,6 @@ class Installer extends PaymentProviderInstaller
     protected $bricksPath = __DIR__ . '/../../install/objectbrick_sources/';
 
     protected $bricksToInstall = [
-        'PaymentProviderDatatrans' => 'objectbrick_PaymentProviderOGone_export.json'
+        'PaymentProviderDatatrans' => 'objectbrick_PaymentProviderDatatrans_export.json'
     ];
 }
