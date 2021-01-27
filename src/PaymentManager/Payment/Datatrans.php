@@ -23,7 +23,6 @@ use Pimcore\Bundle\EcommerceFrameworkBundle\PaymentManager\V7\Payment\RecurringP
 use Pimcore\Bundle\EcommerceFrameworkBundle\PaymentManager\V7\Payment\StartPaymentRequest\AbstractRequest;
 use Pimcore\Bundle\EcommerceFrameworkBundle\PaymentManager\V7\Payment\StartPaymentResponse\FormResponse;
 use Pimcore\Bundle\EcommerceFrameworkBundle\PaymentManager\V7\Payment\StartPaymentResponse\StartPaymentResponseInterface;
-use Pimcore\Bundle\EcommerceFrameworkBundle\PaymentManager\V7\Payment\PaymentInterface;
 use Pimcore\Bundle\EcommerceFrameworkBundle\PriceSystem\Price;
 use Pimcore\Bundle\EcommerceFrameworkBundle\PriceSystem\PriceInterface;
 use Pimcore\Bundle\EcommerceFrameworkBundle\Type\Decimal;
@@ -36,7 +35,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class Datatrans extends AbstractPayment implements PaymentInterface, RecurringPaymentInterface
+class Datatrans extends AbstractPayment implements RecurringPaymentInterface
 {
     const TRANS_TYPE_DEBIT = '05';
     const TRANS_TYPE_CREDIT = '06';
