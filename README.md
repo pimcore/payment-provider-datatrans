@@ -53,18 +53,7 @@ pimcore_ecommerce_config:
 Payment Information: Order payment section "Payment Informations" stores information about every payment trial by Customer.
 
 Add additional fields in "PaymentInfo" fieldcollection, so that Order Manager stores information in Order object:
-
-e.g.
-```
-PaymentInfo Definition
- - General Settings
-    - Layout
-        ...
-        - additionalDataDatatrans
-            - provider_datatrans_acqAuthorizationCode (Type: Input)
-            - provider_datatrans_amount (Type: Input)
-            - provider_datatrans_responseXML (Type: Input)
-```
+![PaymentInfo Additional Data](./doc/img/datatrans_paymentinfo.png)
 
 > It's possible to make an authorisation and clearing in one step. Default behavior is authorisation only. 
 > For automatic clearing set the option "reqtype" to "CAA"
