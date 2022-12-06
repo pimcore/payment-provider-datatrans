@@ -435,7 +435,12 @@ class Datatrans extends AbstractPayment implements RecurringPaymentInterface
     }
 
     /**
-     * @inheritdoc
+     * @param PriceInterface|null $price
+     * @param string|null $reference
+     *
+     * @return StatusInterface
+     *
+     * @throws \Exception
      */
     public function executeDebit(PriceInterface $price = null, $reference = null)
     {
@@ -505,7 +510,11 @@ class Datatrans extends AbstractPayment implements RecurringPaymentInterface
     }
 
     /**
-     * @inheritdoc
+     * @param PriceInterface $price
+     * @param string $reference
+     * @param string $transactionId
+     *
+     * @return StatusInterface
      */
     public function executeCredit(PriceInterface $price, $reference, $transactionId)
     {
@@ -800,11 +809,19 @@ XML;
         return simplexml_load_string($output);
     }
 
+    /**
+     * @return bool
+     */
     public function isRecurringPaymentEnabled()
     {
         return $this->recurringPaymentEnabled;
     }
 
+    /**
+     * @param AbstractOrder $sourceOrder
+     * @param object $paymentBrick
+     * @return mixed|void
+     */
     public function setRecurringPaymentSourceOrderData(AbstractOrder $sourceOrder, $paymentBrick)
     {
         if (method_exists($paymentBrick, 'setSourceOrder')) {
@@ -814,6 +831,14 @@ XML;
         }
     }
 
+    /**
+     * @param Concrete $orderListing
+     * @param array $additionalParameters
+     *
+     * @return Concrete
+     *
+     * @throws \Exception
+     */
     public function applyRecurringPaymentCondition(Concrete $orderListing, $additionalParameters = [])
     {
         $providerBrickName = "PaymentProvider{$this->getName()}";
