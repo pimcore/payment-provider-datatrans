@@ -301,7 +301,7 @@ class Datatrans extends AbstractPayment implements RecurringPaymentInterface
     /**
      * handle response / execute payment
      *
-     * @param mixed $response
+     * @param StatusInterface|array $response
      *
      * @return StatusInterface
      *
