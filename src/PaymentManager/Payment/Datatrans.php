@@ -70,7 +70,7 @@ class Datatrans extends AbstractPayment implements RecurringPaymentInterface
     protected $useDigitalSignature = false;
 
     /**
-     * @var string[]
+     * @var array
      */
     protected $authorizedData = [];
 
@@ -238,7 +238,7 @@ class Datatrans extends AbstractPayment implements RecurringPaymentInterface
 
         // create form
         //form name needs to be null in order to make sure the element names are correct - and not FORMNAME[ELEMENTNAME]
-        $form = $this->formFactory->createNamedBuilder(null, FormType::class, [], [
+        $form = $this->formFactory->createNamedBuilder('', FormType::class, [], [
             'attr' => $formAttributes,
         ]);
 
@@ -301,7 +301,7 @@ class Datatrans extends AbstractPayment implements RecurringPaymentInterface
     /**
      * handle response / execute payment
      *
-     * @param mixed $response
+     * @param StatusInterface|array $response
      *
      * @return StatusInterface
      *
@@ -495,7 +495,7 @@ class Datatrans extends AbstractPayment implements RecurringPaymentInterface
             $message,
             $paymentState,
             [
-                'datatrans_amount' => (string)$price,
+                'datatrans_amount' => ($price instanceof Price) ? (string)$price : '',
                 'datatrans_responseXML' => $transaction->asXML(),
                 'datatrans_acqAuthorizationCode' => (string)$response->acqAuthorizationCode,
             ]
@@ -554,7 +554,7 @@ class Datatrans extends AbstractPayment implements RecurringPaymentInterface
             $message,
             $paymentState,
             [
-                'datatrans_amount' => (string)$price,
+                'datatrans_amount' => ($price instanceof Price) ? (string)$price : '',
                 'datatrans_responseXML' => $transaction->asXML(),
                 'datatrans_acqAuthorizationCode' => (string)$response->acqAuthorizationCode,
             ]
@@ -605,7 +605,7 @@ class Datatrans extends AbstractPayment implements RecurringPaymentInterface
             $message,
             $paymentState,
             [
-                'datatrans_amount' => (string)$price,
+                'datatrans_amount' => ($price instanceof Price) ? (string)$price : '',
                 'datatrans_responseXML' => $transaction->asXML(),
                 'datatrans_acqAuthorizationCode' => (string)$response->acqAuthorizationCode,
             ]
