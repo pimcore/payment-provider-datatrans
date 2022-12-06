@@ -820,6 +820,7 @@ XML;
     /**
      * @param AbstractOrder $sourceOrder
      * @param object $paymentBrick
+     *
      * @return mixed|void
      */
     public function setRecurringPaymentSourceOrderData(AbstractOrder $sourceOrder, $paymentBrick)
