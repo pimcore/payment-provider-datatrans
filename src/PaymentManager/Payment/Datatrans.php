@@ -147,10 +147,7 @@ class Datatrans extends AbstractPayment implements RecurringPaymentInterface
         return $resolver;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return 'Datatrans';
     }
@@ -301,15 +298,11 @@ class Datatrans extends AbstractPayment implements RecurringPaymentInterface
     /**
      * handle response / execute payment
      *
-     * @param StatusInterface|array $response
-     *
-     * @return StatusInterface
-     *
      * @throws \Exception
      *
      * @see http://pilot.datatrans.biz/showcase/doc/XML_Authorisation.pdf : Page 7 > 2.3 Authorisation response
      */
-    public function handleResponse($response)
+    public function handleResponse(StatusInterface|array $response): StatusInterface
     {
         // check for provider error's
         if (array_key_exists('errorCode', $response)) {
@@ -435,14 +428,9 @@ class Datatrans extends AbstractPayment implements RecurringPaymentInterface
     }
 
     /**
-     * @param PriceInterface|null $price
-     * @param string|null $reference
-     *
-     * @return StatusInterface
-     *
      * @throws \Exception
      */
-    public function executeDebit(PriceInterface $price = null, $reference = null)
+    public function executeDebit(?PriceInterface $price = null, ?string $reference = null): StatusInterface
     {
         $uppTransactionId = null;
 
@@ -509,14 +497,7 @@ class Datatrans extends AbstractPayment implements RecurringPaymentInterface
         return $status;
     }
 
-    /**
-     * @param PriceInterface $price
-     * @param string $reference
-     * @param string $transactionId
-     *
-     * @return StatusInterface
-     */
-    public function executeCredit(PriceInterface $price, $reference, $transactionId)
+    public function executeCredit(PriceInterface $price, string $reference, string $transactionId): StatusInterface
     {
         if (in_array($this->authorizedData['reqtype'], $this->getValidAuthorizationTypes()) && $this->authorizedData['uppTransactionId']) {
             // restore price object for payment status
@@ -634,7 +615,7 @@ class Datatrans extends AbstractPayment implements RecurringPaymentInterface
     /**
      * @return array
      */
-    public function getAuthorizedData()
+    public function getAuthorizedData(): array
     {
         return $this->authorizedData;
     }
@@ -809,38 +790,32 @@ XML;
         return simplexml_load_string($output);
     }
 
-    /**
-     * @return bool
-     */
-    public function isRecurringPaymentEnabled()
+    public function isRecurringPaymentEnabled(): bool
     {
         return $this->recurringPaymentEnabled;
     }
 
     /**
-     * @param AbstractOrder $sourceOrder
      * @param object $paymentBrick
-     *
-     * @return mixed|void
      */
-    public function setRecurringPaymentSourceOrderData(AbstractOrder $sourceOrder, $paymentBrick)
+    public function setRecurringPaymentSourceOrderData(AbstractOrder $sourceOrder, $paymentBrick): bool
     {
         if (method_exists($paymentBrick, 'setSourceOrder')) {
             $paymentBrick->setSourceOrder($sourceOrder);
-        } else {
-            Logger::err('Could not set source order for performed alias payment.');
+            return true;
         }
+
+        Logger::err('Could not set source order for performed alias payment.');
+
+        return false;
     }
 
     /**
-     * @param Concrete $orderListing
      * @param array $additionalParameters
-     *
-     * @return Concrete
      *
      * @throws \Exception
      */
-    public function applyRecurringPaymentCondition(Concrete $orderListing, $additionalParameters = [])
+    public function applyRecurringPaymentCondition(Concrete $orderListing, $additionalParameters = []): Concrete
     {
         $providerBrickName = "PaymentProvider{$this->getName()}";
         $orderListing->addObjectbrick($providerBrickName);
