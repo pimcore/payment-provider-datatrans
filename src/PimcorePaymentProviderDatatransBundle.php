@@ -23,14 +23,14 @@ class PimcorePaymentProviderDatatransBundle extends AbstractPimcoreBundle
 {
     use PackageVersionTrait;
 
-    /**
-     * {@inheritdoc}
-     */
     protected function getComposerPackageName(): string
     {
         return 'pimcore/payment-provider-datatrans';
     }
 
+    /**
+     * @return Installer|null
+     */
     public function getInstaller()
     {
         return $this->container->get(Installer::class);
