@@ -302,7 +302,7 @@ class Datatrans extends AbstractPayment implements RecurringPaymentInterface
      *
      * @see http://pilot.datatrans.biz/showcase/doc/XML_Authorisation.pdf : Page 7 > 2.3 Authorisation response
      */
-    public function handleResponse(StatusInterface|array $response): StatusInterface
+    public function handleResponse(StatusInterface | array $response): StatusInterface
     {
         // check for provider error's
         if (array_key_exists('errorCode', $response)) {
@@ -802,6 +802,7 @@ XML;
     {
         if (method_exists($paymentBrick, 'setSourceOrder')) {
             $paymentBrick->setSourceOrder($sourceOrder);
+
             return true;
         }
 
