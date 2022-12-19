@@ -28,10 +28,7 @@ class PimcorePaymentProviderDatatransBundle extends AbstractPimcoreBundle
         return 'pimcore/payment-provider-datatrans';
     }
 
-    /**
-     * @return Installer|null
-     */
-    public function getInstaller()
+    public function getInstaller(): Installer
     {
         return $this->container->get(Installer::class);
     }
