@@ -88,7 +88,7 @@ class Datatrans extends AbstractPayment implements RecurringPaymentInterface
         );
     }
 
-    protected function processOptions(array $options)
+    protected function processOptions(array $options) : void
     {
         parent::processOptions($options);
 
@@ -607,7 +607,7 @@ class Datatrans extends AbstractPayment implements RecurringPaymentInterface
     /**
      * @param array $authorizedData
      */
-    public function setAuthorizedData(array $authorizedData)
+    public function setAuthorizedData(array $authorizedData): void
     {
         $this->authorizedData = $authorizedData;
     }
@@ -798,17 +798,12 @@ XML;
     /**
      * @param object $paymentBrick
      */
-    public function setRecurringPaymentSourceOrderData(AbstractOrder $sourceOrder, $paymentBrick): bool
+    public function setRecurringPaymentSourceOrderData(AbstractOrder $sourceOrder, object $paymentBrick): void
     {
         if (method_exists($paymentBrick, 'setSourceOrder')) {
             $paymentBrick->setSourceOrder($sourceOrder);
-
-            return true;
         }
-
         Logger::err('Could not set source order for performed alias payment.');
-
-        return false;
     }
 
     /**
@@ -816,7 +811,7 @@ XML;
      *
      * @throws \Exception
      */
-    public function applyRecurringPaymentCondition(Concrete $orderListing, $additionalParameters = []): Concrete
+    public function applyRecurringPaymentCondition(Concrete $orderListing, array $additionalParameters = []): void
     {
         $providerBrickName = "PaymentProvider{$this->getName()}";
         $orderListing->addObjectbrick($providerBrickName);
@@ -830,7 +825,5 @@ XML;
 
         $orderListing->setOrderKey("`{$providerBrickName}`.`paymentFinished`", false);
         $orderListing->setOrder('DESC');
-
-        return $orderListing;
     }
 }
